@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #c9b25d, #cbe0a8);
+            cursor: pointer;
+        }
+        
+        .container {
+            width: 400px;
+            position: relative;
+        }
+        
+        .monitor {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        
+        .screen {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            margin: 20px 0;
+            overflow: hidden;
+            background: #000000;
+            border: 5px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 0 3px rgba(64, 64, 64, 1), inset 0 0 100px 0 rgba(0, 0, 0, .75);
+        }
+        
+        .screen::after {
+            content: "SAMSUNG";
+            position: absolute;
+            bottom: .5px;
+            left: 50%;
+            color: #e3eaea;
+            transform: translateX(-50%);
+            font: 300 10px 'Montserrat';
+            letter-spacing: .5px;
+            line-height: 5px;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .lcd {
+            border: 10px solid;
+            border-color: #000 #2020 #2020 #000;
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+            height: 100%;
+        }
+        
+        .lcd img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .glass-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, .175) 0%, rgba(255, 255, 255, 0) 50%);
+        }
+        
+        .stand {
+            position: absolute;
+            width: 35px;
+            height: 80px;
+            background-color: #060606;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .plate {
+            position: absolute;
+            width: 100px;
+            height: 10px;
+            background-color: #050505;
+            bottom: -60px;
+            transform: translateX(-50%);
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="monitor">
+            <div class="screen">
+                <div class="lcd">
+                    <img src="image.jpg" alt="Monitor Screen">
+                    <div class="glass-frame"></div>
+                </div>
+            </div>
+            <div class="stand"></div>
+            <div class="plate"></div>
+        </div>
+    </div>
+</body>
+
+</html>
